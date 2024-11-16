@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.dicoding.mysubmission"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.dicoding.mysubmission"
@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -45,4 +49,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.logging.interceptor)
+    implementation(libs.activity.ktx)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.glide)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.paging.runtime.ktx)
+
 }

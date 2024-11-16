@@ -1,8 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
+
     <style name="Base.Theme.MySubmission" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorSecondary">@color/warmorange</item>
+        <item name="colorPrimaryContainer">@color/warmer</item>
+        <item name="colorSecondaryContainer">@color/skyblue</item>
+        <item name="colorTertiary">@color/warmorange</item>
+        <item name="android:statusBarColor">@color/blue</item>
+        <item name="android:navigationBarColor">@color/skyblue</item>
     </style>
 
     <style name="Theme.MySubmission" parent="Base.Theme.MySubmission" />

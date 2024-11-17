@@ -64,12 +64,13 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.paging.runtime.ktx)
 
-    androidTestImplementation("androidx.core:core-testing:2.1.1")
+    androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
     androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation ("androidx.arch.core:core-testing:2.2.0")
-    testImplementation("androidx.core:core-testing:2.1.1")
+    androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     testImplementation("org.mockito:mockito-core:5.4.0")
-    testImplementation("org.mockito:mockito-inline:5.4.0")
+    testImplementation("org.mockito:mockito-inline:4.8.1")
     implementation ("com.google.android.gms:play-services-location:21.3.0")
 }

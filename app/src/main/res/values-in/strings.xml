@@ -41,4 +41,10 @@
     <string name="upload_story">Unggah Cerita</string>
     <string name="detail_page">Halaman Detail</string>
     <string name="retry">ulang</string>
+
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satelite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="story_maps">Cerita Peta</string>
 </resources>

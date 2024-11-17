@@ -4,13 +4,19 @@
 
     <item
         android:id="@+id/action_localization"
-        android:title="@string/change_language"
         android:icon="@drawable/ic_lang"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/change_language"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_map"
+        android:icon="@drawable/ic_map"
+        android:title="@string/story_maps"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_logout"
-        android:title="@string/logout"
         android:icon="@drawable/ic_logout"
-        app:showAsAction="never"/>
+        android:title="@string/logout"
+        app:showAsAction="never" />
 </menu>

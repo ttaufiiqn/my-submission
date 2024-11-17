@@ -6,6 +6,8 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +19,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySubmission"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBddFellojvcOanjusnqEsXwM3YttO5AlQ" />
+
+        <activity
+            android:name=".ui.activity.StoryMapsActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.activity.WelcomeActivity"
             android:exported="false" />

@@ -5,6 +5,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
+import com.dicoding.mysubmission.data.Result
 import com.dicoding.mysubmission.data.remote.response.AddStoryResponse
 import com.dicoding.mysubmission.data.remote.response.ListStoryItem
 import com.dicoding.mysubmission.data.remote.response.LoginResponse
@@ -16,11 +17,10 @@ import kotlinx.coroutines.withContext
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.HttpException
-import com.dicoding.mysubmission.data.Result
 
 class Repository private constructor(
     private val apiService: ApiService
-){
+) {
     suspend fun login(email: String, password: String): Result<LoginResponse> {
         return withContext(Dispatchers.IO) {
             try {
@@ -71,6 +71,7 @@ class Repository private constructor(
         }
     }
 
+
     suspend fun addStory(
         token: String,
         description: RequestBody,
@@ -95,6 +96,24 @@ class Repository private constructor(
         }
     }
 
+    suspend fun getStoryWithMap(token: String, location: Int): Result<List<ListStoryItem>> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val token = "Bearer $token"
+                val response = apiService.getStories(token, location = location)
+                if (!response.error) {
+                    Result.Success(response.listStory)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                Result.Error("Http Exception: ${e.message}")
+            } catch (e: Exception) {
+                Result.Error("An error occured: ${e.message}")
+            }
+        }
+    }
+
     fun getStoriesPaging(token: String): LiveData<PagingData<ListStoryItem>> {
         return Pager(
             config = PagingConfig(
@@ -105,6 +124,7 @@ class Repository private constructor(
             }
         ).liveData
     }
+
     companion object {
         @Volatile
         private var INSTANCE: Repository? = null

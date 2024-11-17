@@ -40,4 +40,10 @@
     <string name="upload_story">Upload Story</string>
     <string name="detail_page">Detail Page</string>
     <string name="retry">retry</string>
+
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="story_maps">Story Maps</string>
 </resources>

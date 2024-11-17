@@ -125,6 +125,11 @@ class MainActivity : AppCompatActivity() {
                 true
             }
 
+            R.id.action_map -> {
+                startActivity(Intent(this@MainActivity, StoryMapsActivity::class.java))
+                true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
